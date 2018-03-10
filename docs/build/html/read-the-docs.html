@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Publishing the documentation to ReadTheDocs &mdash; SphinxTutorial  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SphinxTutorial  documentation" href="index.html"/>
+        <link rel="prev" title="Populating our documentation" href="build-the-docs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SphinxTutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-quickstart.html">Sphinx Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-config.html">Sphinx Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Writing docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Publishing the documentation to ReadTheDocs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pushing-our-repository">Pushing our repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#importing-into-readthedocs">Importing into ReadTheDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-the-settigns">Changing the settigns</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SphinxTutorial</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Publishing the documentation to ReadTheDocs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/read-the-docs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="publishing-the-documentation-to-readthedocs">
+<h1>Publishing the documentation to ReadTheDocs<a class="headerlink" href="#publishing-the-documentation-to-readthedocs" title="Permalink to this headline">¶</a></h1>
+<p>Now that we have finalised and built our documentation, we can procees to upload it to read the docs.</p>
+<div class="section" id="pushing-our-repository">
+<h2>Pushing our repository<a class="headerlink" href="#pushing-our-repository" title="Permalink to this headline">¶</a></h2>
+<p>First, we must push our project to the Git host of our choice, as such:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youruser@yourpc:~yourWorkspacePath/simpleble-master$ git add .
+youruser@yourpc:~yourWorkspacePath/simpleble-master$ git commit
+youruser@yourpc:~yourWorkspacePath/simpleble-master$ git push
+</pre></div>
+</div>
+</div>
+<div class="section" id="importing-into-readthedocs">
+<h2>Importing into ReadTheDocs<a class="headerlink" href="#importing-into-readthedocs" title="Permalink to this headline">¶</a></h2>
+<p>Once you have pushed your changes to your Git host, create an account with <a class="reference external" href="https://readthedocs.org/">https://readthedocs.org/</a> ,if you haven’t done so already, and proceed to sign in. Once signed in, there are a number of different ways you can follow to import your project, two of which are described below:</p>
+<ol class="arabic simple">
+<li>Assuming your project is hosted on GitHub, you can proceed by linking your GitHub account to your ReadTheDocs account. By doing so, you can import your project by going on your <a class="reference external" href="https://readthedocs.org/dashboard/">ReadTheDocs dashboard</a> and clicking the <a class="reference external" href="https://readthedocs.org/dashboard/import/?">Import a project</a> button. Once there, you will by presented with a list of your GitHub repositories from which you can select the project you want to import by clicking the “+” button next to it’s name, in this case <code class="docutils literal notranslate"><span class="pre">simpleble</span></code>. On the next page, simply press the “Next” button and your project will be imported in ReadTheDocs.</li>
+<li>Alternatively, if you do not wish to link your account, you can follow this <cite>link &lt;https://readthedocs.org/dashboard/import/manual/?&gt;’_, which should take you to the “Manual Project Import” page. There you should be presented with a page allowing should specify the name, in this case ``simpleble`</cite>, and the URL, in this case <a class="reference external" href="https://github.com/sglvladi/simpleble">https://github.com/sglvladi/simpleble</a>, of the repository you wish to import. This method has the disadvantage, that a webhook is NOT auto-generated for you when you import the project, meaning that you will have to do this manually (check <a class="reference external" href="http://docs.readthedocs.io/en/latest/webhooks.html">here</a>), should you wish your documentation to be updated automatically, every time you push to you repository.</li>
+</ol>
+</div>
+<div class="section" id="changing-the-settigns">
+<h2>Changing the settigns<a class="headerlink" href="#changing-the-settigns" title="Permalink to this headline">¶</a></h2>
+<p>Once you have followed either of the two approaches of importing your project, outlined above, you should go the the Admin page of your project and under the “Advance Settings” tab, you should specify the path to your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, relative to you <cite>Repository root</cite> directory. In the case of <cite>simpleble</cite>, since the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> was placed in the root, you can simply type “requirements.txt”.</p>
+<p>For Python 3.x projects, such as <cite>simpleble</cite>, you should also make sure to select the CPython 3.x Interpreter at the bottom of the “Advanced Settings” tab. If you don’t do so, your project will fail to build.</p>
+<p>After you press the “Submit” button, you should be redirected to your project “Overview” page, which should specify the build state of your project. If the page says that “Your documentation is building”, simply wait for a few minutes and allow ReadTheDocs to build your project. Once this is done, you should see a big button on the screen with the text “View your documentation”. You can now click this button to view your documentation.</p>
+<p><strong>THE END….</strong></p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="build-the-docs.html" class="btn btn-neutral" title="Populating our documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lyudmil Vladimirov.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

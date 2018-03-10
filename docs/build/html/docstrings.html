@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Writing docstrings &mdash; SphinxTutorial  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SphinxTutorial  documentation" href="index.html"/>
+        <link rel="next" title="Populating our documentation" href="build-the-docs.html"/>
+        <link rel="prev" title="Sphinx Configuration" href="sphinx-config.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SphinxTutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-quickstart.html">Sphinx Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-config.html">Sphinx Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Writing docstrings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-sphinx-docstring-format">The Sphinx docstring format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#an-example-class-with-docstrings">An example class with docstrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docstrings-in-vs-code">Docstrings in VS code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read-the-docs.html">Publishing the documentation to ReadTheDocs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SphinxTutorial</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Writing docstrings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/docstrings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="writing-docstrings">
+<h1>Writing docstrings<a class="headerlink" href="#writing-docstrings" title="Permalink to this headline">¶</a></h1>
+<p>There are several different docstring formats which one can use in order to enable Sphinx’s <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> extension to automatically generate documentation. For this tutorial we will use the <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> format, since, as the name suggests, it is the standar format used with Sphinx. Other formats include <code class="docutils literal notranslate"><span class="pre">Google</span></code> (see <a class="reference external" href="https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html">here</a>) and <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> (see <a class="reference external" href="http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html#example-numpy">here</a>), but they require the use of Sphinx’s <code class="docutils literal notranslate"><span class="pre">napoleon</span></code> extension, which is beyond the scope of this tutorial.</p>
+<div class="section" id="the-sphinx-docstring-format">
+<h2>The Sphinx docstring format<a class="headerlink" href="#the-sphinx-docstring-format" title="Permalink to this headline">¶</a></h2>
+<p>In general, a typical <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> docsting has the following format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;[Summary]</span>
+
+<span class="sd">:param [ParamName]: [ParamDescription], defaults to [DefaultParamVal]</span>
+<span class="sd">:type [ParamName]: [ParamType](, optional)</span>
+<span class="sd">...</span>
+<span class="sd">:raises [ErrorType]: [ErrorDescription]</span>
+<span class="sd">...</span>
+<span class="sd">:return: [ReturnDescription]</span>
+<span class="sd">:rtype: [ReturnType]</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>A pair of <code class="docutils literal notranslate"><span class="pre">:param:</span></code> and <code class="docutils literal notranslate"><span class="pre">:type:</span></code> directive options must be used for each parameter we wish to document. The <code class="docutils literal notranslate"><span class="pre">:raises:</span></code> option is used to describe any errors that are raised by the code, while the <code class="docutils literal notranslate"><span class="pre">:return:</span></code> and <code class="docutils literal notranslate"><span class="pre">:rtype:</span></code> options are used to describe any values returned by our code. A more thorough explanation of the <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> docsting format can be found <a class="reference external" href="https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html">here</a>.</p>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">...</span></code> notation has been used above to indicate repetition and should not be used when generating actual docstrings, as can be seen by the example presented below.</p>
+</div>
+<div class="section" id="an-example-class-with-docstrings">
+<h2>An example class with docstrings<a class="headerlink" href="#an-example-class-with-docstrings" title="Permalink to this headline">¶</a></h2>
+<p>Let’s have a look at a typical class documentation. In this example we show the docstrings written for the <code class="docutils literal notranslate"><span class="pre">SimpleBleDevice</span></code> class, which is defined within our <code class="docutils literal notranslate"><span class="pre">simpleble</span></code> module:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SimpleBleDevice</span><span class="p">(</span><span class="n">Peripheral</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This is a conceptual class representation of a simple BLE device (GATT Server). It is essentially an extended combination of the :class:`bluepy.btle.Peripheral` and :class:`bluepy.btle.ScanEntry` classes</span>
+
+<span class="sd">    :param client: A handle to the :class:`simpleble.SimpleBleClient` client object that detected the device</span>
+<span class="sd">    :type client: class:`simpleble.SimpleBleClient`</span>
+<span class="sd">    :param addr: Device MAC address, defaults to None</span>
+<span class="sd">    :type addr: str, optional</span>
+<span class="sd">    :param addrType: Device address type - one of ADDR_TYPE_PUBLIC or ADDR_TYPE_RANDOM, defaults to ADDR_TYPE_PUBLIC</span>
+<span class="sd">    :type addrType: str, optional</span>
+<span class="sd">    :param iface: Bluetooth interface number (0 = /dev/hci0) used for the connection, defaults to 0</span>
+<span class="sd">    :type iface: int, optional</span>
+<span class="sd">    :param data: A list of tuples (adtype, description, value) containing the AD type code, human-readable description and value for all available advertising data items, defaults to None</span>
+<span class="sd">    :type data: list, optional</span>
+<span class="sd">    :param rssi: Received Signal Strength Indication for the last received broadcast from the device. This is an integer value measured in dB, where 0 dB is the maximum (theoretical) signal strength, and more negative numbers indicate a weaker signal, defaults to 0</span>
+<span class="sd">    :type rssi: int, optional</span>
+<span class="sd">    :param connectable: `True` if the device supports connections, and `False` otherwise (typically used for advertising ‘beacons’)., defaults to `False`</span>
+<span class="sd">    :type connectable: bool, optional</span>
+<span class="sd">    :param updateCount: Integer count of the number of advertising packets received from the device so far, defaults to 0</span>
+<span class="sd">    :type updateCount: int, optional</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addrType</span><span class="o">=</span><span class="n">ADDR_TYPE_PUBLIC</span><span class="p">,</span> <span class="n">iface</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rssi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">connectable</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">updateCount</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Constructor method</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">deviceAddr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addrType</span><span class="o">=</span><span class="n">addrType</span><span class="p">,</span> <span class="n">iface</span><span class="o">=</span><span class="n">iface</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addr</span> <span class="o">=</span> <span class="n">addr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">addrType</span> <span class="o">=</span> <span class="n">addrType</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">iface</span> <span class="o">=</span> <span class="n">iface</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rssi</span> <span class="o">=</span> <span class="n">rssi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connectable</span> <span class="o">=</span> <span class="n">connectable</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">updateCount</span> <span class="o">=</span> <span class="n">updateCount</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connected</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_services</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_characteristics</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client</span> <span class="o">=</span> <span class="n">client</span>
+
+    <span class="k">def</span> <span class="nf">getServices</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uuids</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns a list of :class:`bluepy.blte.Service` objects representing the services offered by the device. This will perform Bluetooth service discovery if this has not already been done; otherwise it will return a cached list of services immediately..</span>
+
+<span class="sd">        :param uuids: A list of string service UUIDs to be discovered, defaults to None</span>
+<span class="sd">        :type uuids: list, optional</span>
+<span class="sd">        :return: A list of the discovered :class:`bluepy.blte.Service` objects, which match the provided ``uuids``</span>
+<span class="sd">        :rtype: list On Python 3.x, this returns a dictionary view object, not a list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_services</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">uuids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">uuid</span> <span class="ow">in</span> <span class="n">uuids</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">service</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getServiceByUUID</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">services</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">service</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">BTLEException</span><span class="p">:</span>
+                    <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_services</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getServices</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_services</span>
+
+    <span class="k">def</span> <span class="nf">setNotificationCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">callback</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the callback function to be executed when the device sends a notification to the client.</span>
+
+<span class="sd">        :param callback: A function handle of the form ``callback(client, characteristic, data)``, where ``client`` is a handle to the :class:`simpleble.SimpleBleClient` that invoked the callback, ``characteristic`` is the notified :class:`bluepy.blte.Characteristic` object and data is a `bytearray` containing the updated value. Defaults to None</span>
+<span class="sd">        :type callback: function, optional</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">withDelegate</span><span class="p">(</span>
+            <span class="n">SimpleBleNotificationDelegate</span><span class="p">(</span>
+                <span class="n">callback</span><span class="p">,</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getCharacteristics</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">startHnd</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">endHnd</span><span class="o">=</span><span class="mh">0xFFFF</span><span class="p">,</span> <span class="n">uuids</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns a list containing :class:`bluepy.btle.Characteristic` objects for the peripheral. If no arguments are given, will return all characteristics. If startHnd and/or endHnd are given, the list is restricted to characteristics whose handles are within the given range.</span>
+
+<span class="sd">        :param startHnd: Start index, defaults to 1</span>
+<span class="sd">        :type startHnd: int, optional</span>
+<span class="sd">        :param endHnd: End index, defaults to 0xFFFF</span>
+<span class="sd">        :type endHnd: int, optional</span>
+<span class="sd">        :param uuids: a list of UUID strings, defaults to None</span>
+<span class="sd">        :type uuids: list, optional</span>
+<span class="sd">        :return: List of returned :class:`bluepy.btle.Characteristic` objects</span>
+<span class="sd">        :rtype: list</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_characteristics</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">uuids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">uuid</span> <span class="ow">in</span> <span class="n">uuids</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">characteristic</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getCharacteristics</span><span class="p">(</span>
+                        <span class="n">startHnd</span><span class="p">,</span> <span class="n">endHnd</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_characteristics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">characteristic</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">BTLEException</span><span class="p">:</span>
+                    <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_characteristics</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getCharacteristics</span><span class="p">(</span><span class="n">startHnd</span><span class="p">,</span> <span class="n">endHnd</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_characteristics</span>
+
+    <span class="k">def</span> <span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Attempts to initiate a connection with the device.</span>
+
+<span class="sd">        :return: `True` if connection was successful, `False` otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">,</span> <span class="n">addrType</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">addrType</span><span class="p">,</span> <span class="n">iface</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">iface</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">BTLEException</span> <span class="k">as</span> <span class="n">ex</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_connected</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="p">(</span><span class="bp">False</span><span class="p">,</span> <span class="n">ex</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connected</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Drops existing connection to device</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_connected</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">def</span> <span class="nf">isConnected</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Checks to see if device is connected</span>
+
+<span class="sd">        :return: `True` if connected, `False` otherwise</span>
+<span class="sd">        :rtype: bool</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connected</span>
+
+    <span class="k">def</span> <span class="nf">printInfo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Print info about device</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Device </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">), RSSI=</span><span class="si">%d</span><span class="s2"> dB&quot;</span> <span class="o">%</span>
+            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">addr</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">addrType</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">rssi</span><span class="p">))</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">adtype</span><span class="p">,</span> <span class="n">desc</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s2">&quot;  </span><span class="si">%s</span><span class="s2"> = </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">desc</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Once processed by <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> the generated documentation for the above class looks like <a class="reference external" href="http://simpleble.readthedocs.io/en/latest/simpleble.html#the-simplebledevice-class">this</a>.</p>
+</div>
+<div class="section" id="docstrings-in-vs-code">
+<h2>Docstrings in VS code<a class="headerlink" href="#docstrings-in-vs-code" title="Permalink to this headline">¶</a></h2>
+<p>If you are using VS code, the <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring">Python Docstring</a> extension can be used to auto-generate a docstring snippet once a function/class has been written. If you want the extension to generate docstrings in <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> format, you must set the <code class="docutils literal notranslate"><span class="pre">&quot;autoDocstring.docstringFormat&quot;:</span> <span class="pre">&quot;sphinx&quot;</span></code> setting, under File &gt; Preferences &gt; Settings.</p>
+<p>Note that it is best to write the docstrings once you have fully defined the function/class, as then the extension will generate the full dosctring. If you make any changes to the code once a docstring is generated, you will have to manually go and update the affected docstrings.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="build-the-docs.html" class="btn btn-neutral float-right" title="Populating our documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinx-config.html" class="btn btn-neutral" title="Sphinx Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lyudmil Vladimirov.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

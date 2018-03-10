@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Folder structure &mdash; SphinxTutorial  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SphinxTutorial  documentation" href="index.html"/>
+        <link rel="next" title="Project setup" href="project.html"/>
+        <link rel="prev" title="Installation" href="install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SphinxTutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-quickstart.html">Sphinx Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-config.html">Sphinx Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Writing docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read-the-docs.html">Publishing the documentation to ReadTheDocs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SphinxTutorial</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Folder structure</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/folders.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="folder-structure">
+<h1>Folder structure<a class="headerlink" href="#folder-structure" title="Permalink to this headline">¶</a></h1>
+<p>Let’s start by showcasing the folder structure that we should aim for. Here is the folder structure of an example project, named <code class="docutils literal notranslate"><span class="pre">simpleble</span></code> (See <a class="reference external" href="https://github.com/sglvladi/simpleble">GitHub</a> repo and <a class="reference external" href="http://simpleble.readthedocs.io/en/latest/index.html">ReadTheDocs</a> documentation), which is also the package which we will base our tutorial on:</p>
+<div class="line-block">
+<div class="line">simpleble-master</div>
+<div class="line">├── docs</div>
+<div class="line">│   ├── build</div>
+<div class="line">│   ├── make.bat</div>
+<div class="line">│   ├── Makefile</div>
+<div class="line">│   └── source</div>
+<div class="line">├── LICENSE</div>
+<div class="line">├── README.md</div>
+<div class="line">├── requirements.txt</div>
+<div class="line">└── simpleble</div>
+<div class="line-block">
+<div class="line">└── simpleble.py</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<p>In the folder structure above:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">simpleble-master</span></code> is the folder we get when we issue a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull/clone</span></code> command</li>
+<li><code class="docutils literal notranslate"><span class="pre">simpleble-master/docs</span></code> is the directory where our Sphinx documentation will reside</li>
+<li><code class="docutils literal notranslate"><span class="pre">simpleble-master/docs/build</span></code> and <code class="docutils literal notranslate"><span class="pre">simpleble-master/docs/source</span></code> being the Sphinx build and source directories respectively. These folders are autogenerated for us by Sphinx.</li>
+<li><code class="docutils literal notranslate"><span class="pre">simpleble-master/simpleble</span></code> is the actual Python package directory, where our Python source files reside.</li>
+</ul>
+<p>An important note here is that the folder <code class="docutils literal notranslate"><span class="pre">simpleble-master</span></code> is what we will refer to as our <cite>Repository root</cite>, while the folder <code class="docutils literal notranslate"><span class="pre">simpleble-master/docs</span></code> will be our <cite>Sphinx root</cite> or, equivalently, our <cite>Documentation root</cite>. Similarly, <code class="docutils literal notranslate"><span class="pre">simpleble-master/docs/source</span></code> will be our <cite>Sphinx source root</cite> and <code class="docutils literal notranslate"><span class="pre">simpleble-master/docs/build</span></code> is our <cite>Sphinx build root</cite>.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="project.html" class="btn btn-neutral float-right" title="Project setup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lyudmil Vladimirov.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

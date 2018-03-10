@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>A “How to” Guide for Sphinx + ReadTheDocs &mdash; SphinxTutorial  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SphinxTutorial  documentation" href="#"/>
+        <link rel="next" title="Installation" href="install.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> SphinxTutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-quickstart.html">Sphinx Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-config.html">Sphinx Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Writing docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read-the-docs.html">Publishing the documentation to ReadTheDocs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SphinxTutorial</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>A “How to” Guide for Sphinx + ReadTheDocs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="a-how-to-guide-for-sphinx-readthedocs">
+<h1>A “How to” Guide for Sphinx + ReadTheDocs<a class="headerlink" href="#a-how-to-guide-for-sphinx-readthedocs" title="Permalink to this headline">¶</a></h1>
+<p>This document aims to describe a standard way of creating a Python package, which can be documented using Sphinx and then consequently published to ReadTheDocs, so that it’s made available to whoever needs to read it.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project.html#create-a-repository-and-clone-it">Create a repository and clone it</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#include-your-source-codes">Include your source codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-quickstart.html">Sphinx Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-config.html">Sphinx Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-config.html#theme-configuration">Theme configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-config.html#autodoc-configuration">Autodoc configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Writing docstrings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docstrings.html#the-sphinx-docstring-format">The Sphinx docstring format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docstrings.html#an-example-class-with-docstrings">An example class with docstrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docstrings.html#docstrings-in-vs-code">Docstrings in VS code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build-the-docs.html#building-our-documentation">Building our documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-the-docs.html#generating-documentation-from-docstrings">Generating documentation from docstrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-the-docs.html#modifying-the-files-generated-by-sphinx-apidoc">Modifying the files generated by <code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-the-docs.html#adding-pages-to-our-documentation">Adding pages to our documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-the-docs.html#finalising-the-documentation">Finalising the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="read-the-docs.html">Publishing the documentation to ReadTheDocs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="read-the-docs.html#pushing-our-repository">Pushing our repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read-the-docs.html#importing-into-readthedocs">Importing into ReadTheDocs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="read-the-docs.html#changing-the-settigns">Changing the settigns</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lyudmil Vladimirov.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

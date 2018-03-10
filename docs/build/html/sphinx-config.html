@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sphinx Configuration &mdash; SphinxTutorial  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SphinxTutorial  documentation" href="index.html"/>
+        <link rel="next" title="Writing docstrings" href="docstrings.html"/>
+        <link rel="prev" title="Sphinx Quickstart" href="sphinx-quickstart.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SphinxTutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-quickstart.html">Sphinx Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#theme-configuration">Theme configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autodoc-configuration">Autodoc configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Writing docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read-the-docs.html">Publishing the documentation to ReadTheDocs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SphinxTutorial</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Sphinx Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sphinx-config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinx-configuration">
+<h1>Sphinx Configuration<a class="headerlink" href="#sphinx-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Previously, we saw that <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> is the configuration file that Sphinx calls whenever a <code class="docutils literal notranslate"><span class="pre">make</span></code> command is called. Now it’s time we made some configuration changes. Let’s locate and edit the <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youruser@yourpc:~yourWorkspacePath/simpleble-master/docs$ <span class="nb">cd</span> <span class="nb">source</span>
+youruser@yourpc:~yourWorkspacePath/simpleble-master/docs/source$ nano conf.py
+</pre></div>
+</div>
+<p>There are two things we need to tweak, while we have <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> open, before we proceed to build our documentation.</p>
+<div class="section" id="theme-configuration">
+<h2>Theme configuration<a class="headerlink" href="#theme-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The first thing we want to do is to configure Sphinx to use the RTD theme we previously installed (see <a class="reference internal" href="install.html#installation"><span class="std std-ref">Installation</span></a> step). We do this by finding the line that sets the configuration variable <code class="docutils literal notranslate"><span class="pre">html_theme</span></code> and we modify it as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+</pre></div>
+</div>
+<p>Note that there exist numerous other nice themes out there, so if you’re not particularly interested in publishing to RTD then you can choose (or even create) any theme that suits your needs. We chose <code class="docutils literal notranslate"><span class="pre">sphinx_rtd_theme</span></code> since we do want to publish to RTD, plus it is generally quite a nice and clear theme to read.</p>
+</div>
+<div class="section" id="autodoc-configuration">
+<h2>Autodoc configuration<a class="headerlink" href="#autodoc-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Continuing, if we want Sphinx to autogenerate documentation from the comments of our code using the <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> extension, we have to point Sphinx to the directory in which our Python source codes reside. This can be done by uncommenting and altering the following lines, which are generally found at the top of the file:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="hll"><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../simpleble/&#39;</span><span class="p">))</span>
+</span></pre></div>
+</div>
+</div></blockquote>
+<p>Notice how we altered the path specified in line 3 (highlighted). This is because our <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file is located in <code class="docutils literal notranslate"><span class="pre">simpleble-master/docs/source</span></code>, while our Python source codes, in this case the file <code class="docutils literal notranslate"><span class="pre">simpleble.py</span></code>, are located inside <code class="docutils literal notranslate"><span class="pre">simpleble-master/simpleble</span></code>. This means that when Sphinx is looking for our source codes, it now knows that it must go two directories up from <code class="docutils literal notranslate"><span class="pre">conf.by</span></code> (indicated by the <code class="docutils literal notranslate"><span class="pre">../../</span></code> part of the absolute path) and inside the folder <code class="docutils literal notranslate"><span class="pre">simpleble-master/simpleble</span></code>. This is equivalent to adding the directory of our Python source files to PYTHONPATH.</p>
+<p><strong>It is important to note here that the absolute path must be specified in relation to where</strong> <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> <strong>resides, i.e. our `Sphinx source root`, rather than in relation to the `Documentation root`</strong>.</p>
+<p>Next, we proceed by creating a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file in the root directory of our repository, which lists any dependecies of our package. In our case, <code class="docutils literal notranslate"><span class="pre">simpleble</span></code> depends on a package named <code class="docutils literal notranslate"><span class="pre">bluepy</span></code> which can be generally installed by calling <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">bluepy</span></code>.</p>
+<p>Create and open the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youruser@yourpc:~yourWorkspacePath/simpleble-master/docs/source$ <span class="nb">cd</span> ../..
+youruser@yourpc:~yourWorkspacePath/simpleble-master$ nano requirements.txt
+</pre></div>
+</div>
+<p>Then type the following on the first line of the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bluepy</span>
+</pre></div>
+</div>
+<p>Save and close the file (Ctrl+X -&gt; Enter -&gt; Y -&gt; Enter).</p>
+<p>Apart from specifying the dependencies of our package, the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file can be used to batch install any such dependencies by calling <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>. For more information on requirements files, you can have a look at <a class="reference external" href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">pip’s documentation</a>.</p>
+<p>We will later also use the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file when configuring the building process of our ReadTheDocs documentation. If we didn’t have the requirements file, then ReadTheDocs would fail to run <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> in order to generate our documentation from the comments in our source code. In other words, when building our documentation, RTD calls a <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>, which installs any requirements in a virtual environment, which is then where <code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span></code> is run.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docstrings.html" class="btn btn-neutral float-right" title="Writing docstrings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sphinx-quickstart.html" class="btn btn-neutral" title="Sphinx Quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lyudmil Vladimirov.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

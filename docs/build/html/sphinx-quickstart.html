@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sphinx Quickstart &mdash; SphinxTutorial  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="SphinxTutorial  documentation" href="index.html"/>
+        <link rel="next" title="Sphinx Configuration" href="sphinx-config.html"/>
+        <link rel="prev" title="Project setup" href="project.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SphinxTutorial
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="folders.html">Folder structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-config.html">Sphinx Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstrings.html">Writing docstrings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-the-docs.html">Populating our documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="read-the-docs.html">Publishing the documentation to ReadTheDocs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SphinxTutorial</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Sphinx Quickstart</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sphinx-quickstart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sphinx-quickstart">
+<span id="quickstart"></span><h1>Sphinx Quickstart<a class="headerlink" href="#sphinx-quickstart" title="Permalink to this headline">¶</a></h1>
+<p>We begin by creating a Sphinx documentation root directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youruser@yourpc:~yourWorkspacePath/simpleble-master$ mkdir docs
+youruser@yourpc:~yourWorkspacePath/simpleble-master$ <span class="nb">cd</span> docs
+youruser@yourpc:~yourWorkspacePath/simpleble-master/docs$
+</pre></div>
+</div>
+<p>Next we can call <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> to initialise our Sphinx project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youruser@yourpc:~yourWorkspacePath/simpleble-master/docs$ sphinx-quickstart
+</pre></div>
+</div>
+<p>We will be presented with a series of questions, the answer to which can depend from project to project, but a generally safe answer set is presented below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Welcome to the Sphinx 1.7.1 quickstart utility.
+
+Please enter values for the following settings (just press Enter to
+accept a default value, if one is given in brackets).
+
+Selected root path: .
+
+You have two options for placing the build directory for Sphinx output.
+Either, you use a directory &quot;_build&quot; within the root path, or you separate
+&quot;source&quot; and &quot;build&quot; directories within the root path.
+<span class="hll">&gt; Separate source and build directories (y/n) [n]: y
+</span>
+Inside the root directory, two more directories will be created; &quot;_templates&quot;
+for custom HTML templates and &quot;_static&quot; for custom stylesheets and other static
+files. You can enter another prefix (such as &quot;.&quot;) to replace the underscore.
+<span class="hll">&gt; Name prefix for templates and static dir [_]: (ENTER)
+</span>
+The project name will occur in several places in the built documentation.
+<span class="hll">&gt; Project name: simpleble
+</span><span class="hll">&gt; Author name(s): Lyudmil Vladimirov
+</span><span class="hll">&gt; Project release []: 0.0.1
+</span>
+If the documents are to be written in a language other than English,
+you can select a language here by its language code. Sphinx will then
+translate text that it generates into that language.
+
+For a list of supported codes, see
+http://sphinx-doc.org/config.html#confval-language.
+<span class="hll">&gt; Project language [en]: (ENTER)
+</span>
+The file name suffix for source files. Commonly, this is either &quot;.txt&quot;
+or &quot;.rst&quot;.  Only files with this suffix are considered documents.
+<span class="hll">&gt; Source file suffix [.rst]: (ENTER)
+</span>
+One document is special in that it is considered the top node of the
+&quot;contents tree&quot;, that is, it is the root of the hierarchical structure
+of the documents. Normally, this is &quot;index&quot;, but if your &quot;index&quot;
+document is a custom template, you can also set this to another filename.
+<span class="hll">&gt; Name of your master document (without suffix) [index]: (ENTER)
+</span>
+Sphinx can also add configuration for epub output:
+<span class="hll">&gt; Do you want to use the epub builder (y/n) [n]: (ENTER)
+</span>Indicate which of the following Sphinx extensions should be enabled:
+<span class="hll">&gt; autodoc: automatically insert docstrings from modules (y/n) [n]: y
+</span><span class="hll">&gt; doctest: automatically test code snippets in doctest blocks (y/n) [n]: (ENTER)
+</span><span class="hll">&gt; intersphinx: link between Sphinx documentation of different projects (y/n) [n]: (ENTER)
+</span><span class="hll">&gt; todo: write &quot;todo&quot; entries that can be shown or hidden on build (y/n) [n]:
+</span><span class="hll">&gt; coverage: checks for documentation coverage (y/n) [n]: (ENTER)
+</span><span class="hll">&gt; imgmath: include math, rendered as PNG or SVG images (y/n) [n]: (ENTER)
+</span><span class="hll">&gt; mathjax: include math, rendered in the browser by MathJax (y/n) [n]: (ENTER)
+</span><span class="hll">&gt; ifconfig: conditional inclusion of content based on config values (y/n) [n]: (ENTER)
+</span><span class="hll">&gt; viewcode: include links to the source code of documented Python objects (y/n) [n]: y
+</span><span class="hll">&gt; githubpages: create .nojekyll file to publish the document on GitHub pages (y/n) [n]: (ENTER)
+</span>
+A Makefile and a Windows command file can be generated for you so that you
+only have to run e.g. `make html&#39; instead of invoking sphinx-build
+directly.
+<span class="hll">&gt; Create Makefile? (y/n) [y]: (ENTER)
+</span><span class="hll">&gt; Create Windows command file? (y/n) [y]: (ENTER)
+</span>
+Creating file ./source/conf.py.
+Creating file ./source/index.rst.
+Creating file ./Makefile.
+Creating file ./make.bat.
+
+Finished: An initial directory structure has been created.
+</pre></div>
+</div>
+<p>Now we can see that some foldes and files have been autogenerated for us:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youruser@yourpc:~yourWorkspacePath/simpleble-master/docs$ ls
+<span class="hll">build  make.bat  Makefile  <span class="nb">source</span>
+</span>youruser@yourpc:~yourWorkspacePath/simpleble-master/docs$ <span class="nb">cd</span> <span class="nb">source</span>
+youruser@yourpc:~yourWorkspacePath/simpleble-master/docs$ ls
+<span class="hll">conf.py  index.rst  _static  _templates
+</span></pre></div>
+</div>
+<p>Let’s see how each of these files matter:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">source</span></code>: This is where all our <cite>.rst</cite> files will reside.</li>
+<li><code class="docutils literal notranslate"><span class="pre">source/conf.py</span></code>: This is the file where all Sphinx configuration settings (including the settings we specified during the <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code> setup) are specified. When any <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">&lt;builder&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">&lt;builder&gt;</span></code> command is called, Sphinx runs this file to extract the desired configuration.</li>
+<li><code class="docutils literal notranslate"><span class="pre">source/index.rst</span></code>: This is the file which tells Sphinx how to render our index.html page. In general, each <code class="docutils literal notranslate"><span class="pre">source/*.rst</span></code> file is converted to a corresponding <code class="docutils literal notranslate"><span class="pre">build/html/*.html</span></code> page when <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> is called.</li>
+<li><cite>build</cite> : This is the directory where the output of any builder is stored when a <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">&lt;builder&gt;</span></code> or <code class="docutils literal notranslate"><span class="pre">sphinx-build</span> <span class="pre">&lt;builder&gt;</span></code> command is called. For the purposes of this tutorial, we are particularly interested in building html documentation and thus our build outputs will be stored under <code class="docutils literal notranslate"><span class="pre">build/html</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">build/html</span></code> does not exist just yet, but will be autogenerated when we call <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> later.</li>
+</ul>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sphinx-config.html" class="btn btn-neutral float-right" title="Sphinx Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="project.html" class="btn btn-neutral" title="Project setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Lyudmil Vladimirov.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
