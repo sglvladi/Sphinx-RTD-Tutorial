@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'SphinxTutorial'
+project = 'Sphinx-RTD-Tutorial'
 copyright = '2018, Lyudmil Vladimirov'
 author = 'Lyudmil Vladimirov'
 
