@@ -35,7 +35,7 @@ After you press the "Submit" button, you should be redirected to your project "O
 
 Reading the docs
 ****************
-Once this is done, if everything has been done correctly, your project should pass the building process and you should see a big button on the screen with the text "View your documentation". You can now click this button to view your documentation. Typically, your documentation will be hosted under the domain `yourProjectName.readthedocs.io`. In the case of the "simpleble", the built documentation can be found under `<simpleble.readthedocs.io>`_.  
+Once this is done, if everything has been done correctly, your project should pass the building process and you should see a big button on the screen with the text "View your documentation". You can now click this button to view your documentation. Typically, your documentation will be hosted under the domain `yourProjectName.readthedocs.io`. In the case of the "simpleble", the built documentation can be found under `simpleble.readthedocs.io <https://simpleble.readthedocs.io/en/latest/>`_.  
 
 Well, I hope you enjoyed the tutorial and that it helped you at least in some aspect of your Sphinx+RTD learning curve. 
 
