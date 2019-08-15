@@ -6,7 +6,7 @@ There are several different docstring formats which one can use in order to enab
 The Sphinx docstring format
 ***************************
 
-In general, a typical ``Sphinx`` docsting has the following format:
+In general, a typical ``Sphinx`` docstring has the following format:
 
 .. code-block:: python
 
@@ -21,7 +21,7 @@ In general, a typical ``Sphinx`` docsting has the following format:
     :rtype: [ReturnType]
     """
 
-A pair of ``:param:`` and ``:type:`` directive options must be used for each parameter we wish to document. The ``:raises:`` option is used to describe any errors that are raised by the code, while the ``:return:`` and ``:rtype:`` options are used to describe any values returned by our code. A more thorough explanation of the ``Sphinx`` docsting format can be found `here <https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html>`_. 
+A pair of ``:param:`` and ``:type:`` directive options must be used for each parameter we wish to document. The ``:raises:`` option is used to describe any errors that are raised by the code, while the ``:return:`` and ``:rtype:`` options are used to describe any values returned by our code. A more thorough explanation of the ``Sphinx`` docstring format can be found `here <https://thomas-cokelaer.info/tutorials/sphinx/docstring_python.html>`_. 
 
 Note that the ``...`` notation has been used above to indicate repetition and should not be used when generating actual docstrings, as can be seen by the example presented below.
 
