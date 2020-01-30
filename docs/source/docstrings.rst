@@ -33,7 +33,7 @@ Let's have a look at a typical class documentation. In this example we show the 
 
 .. code-block:: python
 
-    class SimpleBleDevice(Peripheral):
+    class SimpleBleDevice(object):
         """This is a conceptual class representation of a simple BLE device (GATT Server). It is essentially an extended combination of the :class:`bluepy.btle.Peripheral` and :class:`bluepy.btle.ScanEntry` classes
 
         :param client: A handle to the :class:`simpleble.SimpleBleClient` client object that detected the device
@@ -54,7 +54,7 @@ Let's have a look at a typical class documentation. In this example we show the 
         :type updateCount: int, optional
         """
 
-        def __init__(self, client, addr=None, addrType=ADDR_TYPE_PUBLIC, iface=0, data=None, rssi=0, connectable=False, updateCount=0):
+        def __init__(self, client, addr=None, addrType=None, iface=0, data=None, rssi=0, connectable=False, updateCount=0):
             """Constructor method
             """
             super().__init__(deviceAddr=None, addrType=addrType, iface=iface)
