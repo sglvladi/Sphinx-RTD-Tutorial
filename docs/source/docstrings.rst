@@ -6,7 +6,7 @@ There are several different docstring formats which one can use in order to enab
 The Sphinx docstring format
 ***************************
 
-In general, a typical ``Sphinx`` docsting has the following format:
+In general, a typical ``Sphinx`` docstring has the following format:
 
 .. code-block:: python
 
