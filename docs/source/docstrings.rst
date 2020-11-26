@@ -13,7 +13,7 @@ In general, a typical ``Sphinx`` docstring has the following format:
     """[Summary]
 
     :param [ParamName]: [ParamDescription], defaults to [DefaultParamVal]
-    :type [ParamName]: [ParamType](, optional)
+    :type [ParamName]: [ParamType]
     ...
     :raises [ErrorType]: [ErrorDescription]
     ...
@@ -42,29 +42,29 @@ Let's have a look at a typical class documentation. In this example we show the 
             object that detected the device
         :type client: class:`simpleble.SimpleBleClient`
         :param addr: Device MAC address, defaults to None
-        :type addr: str, optional
+        :type addr: str
         :param addrType: Device address type - one of ADDR_TYPE_PUBLIC or
             ADDR_TYPE_RANDOM, defaults to ADDR_TYPE_PUBLIC
-        :type addrType: str, optional
+        :type addrType: str
         :param iface: Bluetooth interface number (0 = /dev/hci0) used for the
             connection, defaults to 0
-        :type iface: int, optional
+        :type iface: int
         :param data: A list of tuples (adtype, description, value) containing the
             AD type code, human-readable description and value for all available
             advertising data items, defaults to None
-        :type data: list, optional
+        :type data: list
         :param rssi: Received Signal Strength Indication for the last received
             broadcast from the device. This is an integer value measured in dB,
             where 0 dB is the maximum (theoretical) signal strength, and more
             negative numbers indicate a weaker signal, defaults to 0
-        :type rssi: int, optional
+        :type rssi: int
         :param connectable: `True` if the device supports connections, and `False`
             otherwise (typically used for advertising ‘beacons’).,
             defaults to `False`
-        :type connectable: bool, optional
+        :type connectable: bool
         :param updateCount: Integer count of the number of advertising packets
             received from the device so far, defaults to 0
-        :type updateCount: int, optional
+        :type updateCount: int
         """
 
         def __init__(self, client, addr=None, addrType=None, iface=0,
@@ -92,7 +92,7 @@ Let's have a look at a typical class documentation. In this example we show the 
 
             :param uuids: A list of string service UUIDs to be discovered,
                 defaults to None
-            :type uuids: list, optional
+            :type uuids: list
             :return: A list of the discovered :class:`bluepy.blte.Service` objects,
                 which match the provided ``uuids``
             :rtype: list On Python 3.x, this returns a dictionary view object,
@@ -120,7 +120,7 @@ Let's have a look at a typical class documentation. In this example we show the 
                 callback, ``characteristic`` is the notified
                 :class:`bluepy.blte.Characteristic` object and data is a
                 `bytearray` containing the updated value. Defaults to None
-            :type callback: function, optional
+            :type callback: function
             """
             self.withDelegate(
                 SimpleBleNotificationDelegate(
@@ -136,11 +136,11 @@ Let's have a look at a typical class documentation. In this example we show the 
             restricted to characteristics whose handles are within the given range.
 
             :param startHnd: Start index, defaults to 1
-            :type startHnd: int, optional
+            :type startHnd: int
             :param endHnd: End index, defaults to 0xFFFF
-            :type endHnd: int, optional
+            :type endHnd: int
             :param uuids: a list of UUID strings, defaults to None
-            :type uuids: list, optional
+            :type uuids: list
             :return: List of returned :class:`bluepy.btle.Characteristic` objects
             :rtype: list
             """
