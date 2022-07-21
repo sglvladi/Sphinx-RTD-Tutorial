@@ -21,7 +21,17 @@ Note that there exist numerous other nice themes out there, so if you're not par
 
 Autodoc configuration
 *********************
-Continuing, if we want Sphinx to autogenerate documentation from the comments of our code using the ``autodoc`` extension, we have to point Sphinx to the directory in which our Python source codes reside. This can be done by uncommenting and altering the following lines, which are generally found at the top of the file:
+Continuing, if we want Sphinx to autogenerate documentation from the comments of our code using the ``autodoc`` extension, we first have to enable it by adding its name to the ``extensions`` list:
+
+.. code-block:: python
+   :emphasize-lines: 4
+
+   # Add any Sphinx extension module names here, as strings. They can be
+   # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+   # ones.
+   extensions = [ 'sphinx.ext.autodoc' ]
+
+Then its necessary to point Sphinx to the directory in which our Python source codes reside. This can be done by uncommenting and altering the following lines, which are generally found at the top of the file:
 
  .. code-block:: python
     :emphasize-lines: 3
