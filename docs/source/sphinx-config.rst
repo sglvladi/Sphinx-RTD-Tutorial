@@ -30,7 +30,7 @@ Continuing, if we want Sphinx to autogenerate documentation from the comments of
     import sys
     sys.path.insert(0, os.path.abspath('../../simpleble/'))
 
-Notice how we altered the path specified in line 3 (highlighted). This is because our ``conf.py`` file is located in ``simpleble-master/docs/source``, while our Python source codes, in this case the file ``simpleble.py``, are located inside ``simpleble-master/simpleble``. This means that when Sphinx is looking for our source codes, it now knows that it must go two directories up from ``conf.by`` (indicated by the ``../../`` part of the absolute path) and inside the folder ``simpleble-master/simpleble``. This is equivalent to adding the directory of our Python source files to PYTHONPATH. 
+Notice how we altered the path specified in line 3 (highlighted). This is because our ``conf.py`` file is located in ``simpleble-master/docs/source``, while our Python source codes, in this case the file ``simpleble.py``, are located inside ``simpleble-master/simpleble``. This means that when Sphinx is looking for our source codes, it now knows that it must go two directories up from ``conf.py`` (indicated by the ``../../`` part of the absolute path) and inside the folder ``simpleble-master/simpleble``. This is equivalent to adding the directory of our Python source files to PYTHONPATH. 
 
 **It is important to note here that the absolute path must be specified in relation to where** ``conf.py`` **resides, i.e. our `Sphinx source root`, rather than in relation to the `Documentation root`**.
 
