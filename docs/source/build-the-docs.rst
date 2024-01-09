@@ -54,7 +54,7 @@ Now let's see how we can auto-generate documentation from the docstrings in our 
     Creating file ./source/simpleble.rst.
     Creating file ./source/modules.rst.
 
-The above command generates two files: ``simpleble.rst`` and ``modules.rst`` in our `Sphinx source root` directory. The ``modules.rst`` file is usefull when more than one modules (``.py`` files) are included in our Python source directory, but since we only have one module and to keep thing simple, we can ignore it for the purposes of this tutorial. Let's have a look at the contents of ``simpleble.rst``:
+The above command generates two files: ``simpleble.rst`` and ``modules.rst`` in our `Sphinx source root` directory. The ``modules.rst`` file is useful when more than one modules (``.py`` files) are included in our Python source directory, but since we only have one module and to keep thing simple, we can ignore it for the purposes of this tutorial. Let's have a look at the contents of ``simpleble.rst``:
 
 .. code-block:: RST
 
